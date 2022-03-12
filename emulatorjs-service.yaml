@@ -6,8 +6,6 @@ metadata:
     app: emulatorjs
   name: emulatorjs
 spec:
-  clusterIPs:
-    - 10.152.183.163
   internalTrafficPolicy: Cluster
   ipFamilies:
     - IPv4
