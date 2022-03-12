@@ -1,0 +1,17 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  annotations: {}
+  name: emulatorjs
+spec:
+  rules:
+    - host: games.k8s.ferrell.local
+      http:
+        paths:
+          - backend:
+              service:
+                name: emulatorjs
+                port:
+                  number: 80
+            path: /
+            pathType: ImplementationSpecific

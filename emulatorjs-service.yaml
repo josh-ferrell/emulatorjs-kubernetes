@@ -1,0 +1,27 @@
+apiVersion: v1
+kind: Service
+metadata:
+  annotations: {}
+  labels:
+    app: emulatorjs
+  name: emulatorjs
+spec:
+  clusterIPs:
+    - 10.152.183.163
+  internalTrafficPolicy: Cluster
+  ipFamilies:
+    - IPv4
+  ipFamilyPolicy: SingleStack
+  ports:
+    - name: web
+      port: 80
+      protocol: TCP
+      targetPort: 80
+    - name: management
+      port: 3000
+      protocol: TCP
+      targetPort: 3000
+  selector:
+    app: emulatorjs
+  sessionAffinity: None
+  type: ClusterIP
